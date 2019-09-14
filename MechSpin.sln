@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MechSpin", "MechSpin.csproj", "{2DC6FB16-C43E-47BF-B3D6-E25026741AB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F974C33E-C203-44BD-8C51-EB7AB6D172B0}"
+	ProjectSection(SolutionItems) = preProject
+		mod.json = mod.json
+		UNLICENSE = UNLICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|Any CPU = Release|Any CPU

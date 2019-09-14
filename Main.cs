@@ -17,7 +17,6 @@ namespace MechSpin
             HBSLog = Logger.GetLogger("MechSpin");
         }
 
-
         internal static void SetupSpin(GameObject mech)
         {
             if (mech.GetComponent<SpinComponent>() != null)
