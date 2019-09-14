@@ -8,12 +8,14 @@ namespace MechSpin
         public float BleedPerSec = 450f;
         public float SpeedMultiplier = -360f;
         private float _curSpeed;
+        private float _numDegrees;
 
         public void Update()
         {
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 _curSpeed = SpeedMultiplier * Input.GetAxis("Mouse X");
+                _numDegrees = 0;
             }
 
             var absoluteSpeed = Mathf.Abs(_curSpeed);
@@ -32,6 +34,13 @@ namespace MechSpin
 
             var deltaAngle = _curSpeed * Time.deltaTime;
             transform.Rotate(0, deltaAngle, 0);
+
+            _numDegrees += Mathf.Abs(deltaAngle);
+            if (_numDegrees >= 360f)
+            {
+                Main.AddToCounter(Mathf.FloorToInt(_numDegrees / 360f));
+                _numDegrees %= 360;
+            }
         }
     }
 }
